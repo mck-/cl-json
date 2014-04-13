@@ -490,9 +490,9 @@ double quote, calling string handlers as it goes."
 
 (defun accumulator-add-key (key)
   "Add a cons whose CAR is KEY to the end of the list accumulator."
-  (let ((key (funcall *identifier-name-to-key* (funcall *json-identifier-name-to-lisp* key))))
-    (setq *accumulator-last*
-          (setf (cdr *accumulator-last*) (cons (cons key nil) nil)))))
+  ;; (let ((key (funcall *identifier-name-to-key* (funcall *json-identifier-name-to-lisp* key))))
+  (setq *accumulator-last*
+        (setf (cdr *accumulator-last*) (cons (cons key nil) nil))))
 
 (defun accumulator-add-value (value)
   "Set the CDR of the most recently accumulated cons to VALUE."
